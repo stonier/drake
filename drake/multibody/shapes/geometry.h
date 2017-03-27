@@ -234,6 +234,10 @@ class Mesh : public Geometry {
       PointsVector* vertices, TrianglesVector* triangles,
       TriangulatePolicy triangulate = TriangulatePolicy::kFailOnNonTri) const;
 
+  void LoadObjFile2(
+      PointsVector* vertices, TrianglesVector* triangles,
+      TriangulatePolicy triangulate = TriangulatePolicy::kFailOnNonTri) const;
+
  private:
   // Lower limit on generated triangle area (as documented).
   static constexpr double kMinArea = 1e-10;

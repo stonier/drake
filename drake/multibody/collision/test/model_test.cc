@@ -613,7 +613,7 @@ class NonAlignedBoxes: public ::testing::Test {
   ElementToSurfacePointMap solution_;
 };
 
-TEST_F(NonAlignedBoxes, SingleContact) {
+TEST_F(NonAlignedBoxes, SingleContactd) {
   // Numerical precision tolerance to perform floating point comparisons.
   // Its magnitude was chosen to be the minimum value for which these tests can
   // successfully pass.
