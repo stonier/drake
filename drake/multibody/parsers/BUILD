@@ -18,6 +18,7 @@ drake_cc_library(
         "package_map.cc",
         "parser_common.cc",
         "sdf_parser.cc",
+        "sdformat_parser.cc",
         "urdf_parser.cc",
         "xml_util.cc",
     ],
@@ -26,10 +27,12 @@ drake_cc_library(
         "package_map.h",
         "parser_common.h",
         "sdf_parser.h",
+        "sdformat_parser.h",
         "urdf_parser.h",
         "xml_util.h",
     ],
     deps = [
+        "@sdformat",
         "//drake/common:drake_path",
         "//drake/multibody:rigid_body_tree",
         "//drake/thirdParty:spruce",
@@ -44,9 +47,9 @@ drake_cc_binary(
     testonly = 1,
     srcs = ["test/urdf_kinematics_test.cc"],
     deps = [
+        "@gtest//:main",
         ":parsers",
         "//drake/multibody:rigid_body_tree",
-        "@gtest//:main",
     ],
 )
 
@@ -56,9 +59,9 @@ drake_cc_binary(
     testonly = 1,
     srcs = ["test/urdf_collision_test.cc"],
     deps = [
+        "@gtest//:main",
         ":parsers",
         "//drake/multibody:rigid_body_tree",
-        "@gtest//:main",
     ],
 )
 
@@ -67,9 +70,9 @@ drake_cc_binary(
     name = "urdf_manipulator_dynamics_test",
     srcs = ["test/urdf_manipulator_dynamics_test.cc"],
     deps = [
+        "@gtest//:main",
         ":parsers",
         "//drake/multibody:rigid_body_tree",
-        "@gtest//:main",
     ],
 )
 
